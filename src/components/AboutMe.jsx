@@ -16,9 +16,34 @@ const AboutMe = () => {
           fontSize: '60px',
           margin: '0 auto 20px auto',
           boxShadow: '0 10px 30px rgba(0, 122, 204, 0.3)',
-          border: '4px solid #e5e7eb'
+          border: '4px solid #e5e7eb',
+          overflow: 'hidden',
+          position: 'relative'
         }}>
-          👤
+          <img 
+            src="/1737058680058.jpeg?v=1" 
+            alt="Justin Hernandez-Tovalin"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              borderRadius: '50%'
+            }}
+            onError={(e) => {
+              e.target.style.display = 'none'
+              e.target.nextSibling.style.display = 'flex'
+            }}
+          />
+          <div style={{
+            width: '100%',
+            height: '100%',
+            display: 'none',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '60px'
+          }}>
+            👤
+          </div>
         </div>
         
         <h1 style={{
