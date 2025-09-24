@@ -75,10 +75,11 @@ body.dragging::after {
 }
 
 .shiba-logo {
-  width: 20px;
-  height: 20px;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-8 9z"/><circle cx="8" cy="9" r="1"/><circle cx="16" cy="9" r="1"/><path d="M8 12h8v2H8z"/></svg>') no-repeat center;
+  width: 28px;
+  height: 28px;
+  background: url('/shiba-logo.svg?v=2') no-repeat center;
   background-size: contain;
+  filter: brightness(0) invert(1);
 }
 
 .active-window-title {

@@ -156,6 +156,37 @@ const AboutMe = () => {
         </div>
       </div>
 
+      {/* Fun Fact Section */}
+      <div style={{
+        background: 'linear-gradient(135deg, #fef3c7 0%, #fde68a 100%)',
+        padding: '20px',
+        borderRadius: '12px',
+        border: '1px solid #f59e0b',
+        marginBottom: '30px',
+        textAlign: 'center'
+      }}>
+        <h3 style={{
+          margin: '0 0 10px 0',
+          color: '#92400e',
+          fontSize: '18px',
+          fontWeight: '600',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '8px'
+        }}>
+          🐶 Fun Fact
+        </h3>
+        <p style={{
+          margin: '0',
+          color: '#78350f',
+          fontSize: '16px',
+          fontWeight: '500'
+        }}>
+          My favorite dog breed is the Shiba Inu! That's why you'll see a Shiba Inu logo in the menu bar instead of the traditional Apple logo.
+        </p>
+      </div>
+
       {/* Skills Preview */}
       <div style={{
         background: 'linear-gradient(135deg, #9C27B0 0%, #673AB7 100%)',
