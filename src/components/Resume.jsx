@@ -134,21 +134,6 @@ const Resume = ({ resumeData: propResumeData }) => {
         <ContactInfo contact={resumeData.contact} />
       </div>
 
-      {/* Professional Summary */}
-      {resumeData.summary && (
-        <ResumeSection title="Professional Summary">
-          <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
-            {resumeData.summary.map((point, index) => (
-              <li 
-                key={index}
-                className="mb-1 text-gray-900"
-                dangerouslySetInnerHTML={{ __html: point }}
-              />
-            ))}
-          </ul>
-        </ResumeSection>
-      )}
-
       {/* Education */}
       <ResumeSection title="Education">
         {resumeData.education.map((edu, index) => (
@@ -188,11 +173,7 @@ const Resume = ({ resumeData: propResumeData }) => {
 // Default resume data based on your provided information
 const defaultResumeData = {
   name: "Justin Hernandez-Tovalin",
-  title: "Software Engineer",
-  summary: [
-    '<strong>Full-stack developer</strong> with expertise in React, Next.js, and database optimization, delivering scalable solutions for collaborative team environments.',
-    'Proven track record of <strong>increasing operational efficiency by 25%</strong> and <strong>reducing manual processes by 50%</strong> through innovative problem-solving and technical implementation.'
-  ],
+  title: "Computer Science Student at the University of Washington",
   contact: {
     location: "Seattle, WA",
     linkedin: "https://www.linkedin.com/in/justin-hernandez-tovalin-uw2026",
