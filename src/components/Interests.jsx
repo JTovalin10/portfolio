@@ -50,6 +50,18 @@ const Interests = () => {
                 'Knowledge sharing',
                 'Professional networking'
             ]
+        },
+        {
+            id: 'finance',
+            title: 'Personal Finance & Investing',
+            icon: '💰',
+            description: 'Building financial literacy and exploring investment strategies for long-term wealth building',
+            details: [
+                'Learning about different investment vehicles and strategies',
+                'Understanding credit and personal finance management',
+                'Exploring stock market analysis and portfolio building',
+                'Studying financial planning and wealth accumulation'
+            ]
         }
     ]
 
