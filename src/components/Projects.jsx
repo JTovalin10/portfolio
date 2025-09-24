@@ -4,76 +4,65 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Personal Portfolio Website",
-      description: "A modern, interactive portfolio built with React and Tailwind CSS, featuring a macOS-inspired desktop interface.",
-      technologies: ["React", "JavaScript", "Tailwind CSS", "Vite"],
+      title: "Outfit Finder",
+      description: "Final project for my app development class (CSE 340). Outfit Finder is a Flutter application that helps users choose appropriate clothing based on current weather conditions and location. I worked on a team and led the development of this app that provides real-time outfit suggestions, maintains a digital wardrobe, and offers location-aware clothing recommendations.",
+      technologies: ["Dart", "Flutter"],
       status: "Completed",
-      features: ["Responsive Design", "Interactive UI", "Modern Animations", "Mobile Optimized"],
-      github: "https://github.com/JTovalin10/portfolio",
+      features: ["Real-time weather-based outfit suggestions", "Location-aware clothing recommendations", "Digital wardrobe management", "Sample outfits for different weather conditions", "Persistent storage using Isar database", "Provider-based state management", "Weather condition filtering (Sunny, Gloomy, Rainy, Slightly Cloudy)", "Temperature tracking (current, high, low)", "Automatic weather updates every 70 seconds", "Undo/redo functionality for outfit management", "Internationalization support (English, Spanish)"],
+      github: "https://github.com/JTovalin10/outfit-finder",
       demo: "#",
-      image: "💻"
+      image: "👕"
     },
     {
       id: 2,
-      title: "E-Commerce Web Application",
-      description: "Full-stack e-commerce platform with user authentication, product management, and payment integration.",
-      technologies: ["React", "Node.js", "Express", "MongoDB", "Stripe API"],
-      status: "In Progress",
-      features: ["User Authentication", "Product Catalog", "Shopping Cart", "Payment Processing"],
-      github: "https://github.com/JTovalin10/ecommerce-app",
+      title: "E-Store",
+      description: "Class project e-commerce platform with product management and SQLite3 database integration.",
+      technologies: ["JavaScript", "SQL", "HTML", "CSS"],
+      status: "Completed",
+      features: ["Product management", "SQLite3 database integration", "Class project implementation"],
+      github: "https://github.com/JTovalin10/E-Commerce-Website",
       demo: "#",
       image: "🛒"
     },
     {
       id: 3,
-      title: "Task Management System",
-      description: "Collaborative task management tool with real-time updates and team collaboration features.",
-      technologies: ["React", "Socket.io", "Node.js", "PostgreSQL"],
+      title: "GradescopePlus",
+      description: "I forked a gradescope-api that someone made and added the web part so that people can see their assignments easier. Simple tool for Gradescope that shows assignments due soon and how many days until they are due.",
+      technologies: ["Python", "React"],
       status: "Completed",
-      features: ["Real-time Updates", "Team Collaboration", "Task Tracking", "Progress Analytics"],
-      github: "https://github.com/JTovalin10/task-manager",
-      demo: "#",
-      image: "📋"
-    },
-    {
-      id: 4,
-      title: "Weather Dashboard",
-      description: "Interactive weather application with location-based forecasts and data visualization.",
-      technologies: ["JavaScript", "HTML5", "CSS3", "Weather API"],
-      status: "Completed",
-      features: ["Location Detection", "5-Day Forecast", "Interactive Charts", "Responsive Design"],
-      github: "https://github.com/JTovalin10/weather-dashboard",
-      demo: "#",
-      image: "🌤️"
-    },
-    {
-      id: 5,
-      title: "Social Media Analytics Tool",
-      description: "Analytics dashboard for social media metrics with data visualization and reporting features.",
-      technologies: ["Python", "Flask", "Chart.js", "SQLite"],
-      status: "In Progress",
-      features: ["Data Visualization", "Custom Reports", "Export Functionality", "Real-time Updates"],
-      github: "https://github.com/JTovalin10/social-analytics",
-      demo: "#",
+      features: ["Assignment due date tracking", "Days until due calculation", "Gradescope integration", "Web interface for easier assignment viewing"],
+      github: "https://github.com/JTovalin10/gradescope-api",
+      demo: "https://gradescope-plus.vercel.app/",
       image: "📊"
     },
     {
-      id: 6,
-      title: "Mobile-First Banking App",
-      description: "Secure banking application with transaction management and financial planning tools.",
-      technologies: ["React Native", "Node.js", "MySQL", "JWT Authentication"],
-      status: "Planning",
-      features: ["Secure Transactions", "Budget Tracking", "Bill Reminders", "Financial Insights"],
-      github: "https://github.com/JTovalin10/banking-app",
+      id: 4,
+      title: "Advanced Expense Tracker",
+      description: "Expense tracker in terminal that uses OOP in Python and has admin and user roles. Project meant to learn Python programming concepts.",
+      technologies: ["Python"],
+      status: "Completed",
+      features: ["Object-oriented programming", "Admin and user roles", "Terminal-based interface", "Expense tracking functionality"],
+      github: "https://github.com/JTovalin10/expenseTrackerAdvanced",
       demo: "#",
-      image: "🏦"
+      image: "💰"
+    },
+    {
+      id: 5,
+      title: "Harmony",
+      description: "Cross-platform music platform syncing desktop app. It will use users' laptop resources to link their given playlists so they don't have to pay the websites that can also do this.",
+      technologies: ["Electron"],
+      status: "In Progress",
+      features: ["Cross-platform music syncing", "Desktop application", "Playlist management", "Resource-efficient syncing"],
+      github: "https://github.com/JTovalin10/Harmony",
+      demo: "#",
+      image: "🎵"
     }
   ]
 
   const getStatusColor = (status) => {
     switch (status) {
       case 'Completed': return '#28ca42'
-      case 'In Progress': return '#FFD54F'
+      case 'In Progress': return '#FF6B35'
       case 'Planning': return '#9C27B0'
       default: return '#E1BEE7'
     }
@@ -83,7 +72,7 @@ const Projects = () => {
     <div style={{ padding: '20px', height: '100%', overflow: 'auto' }}>
       <h1 style={{
         margin: '0 0 20px 0',
-        color: 'rgba(255, 255, 255, 0.95)',
+        color: '#000000',
         fontSize: '28px',
         fontWeight: '600',
         textAlign: 'center'
@@ -92,16 +81,16 @@ const Projects = () => {
       </h1>
 
       <div style={{
-        background: 'rgba(255, 255, 255, 0.05)',
+        background: 'rgba(0, 0, 0, 0.05)',
         padding: '20px',
         borderRadius: '12px',
-        border: '1px solid rgba(255, 255, 255, 0.1)',
+        border: '1px solid rgba(0, 0, 0, 0.1)',
         marginBottom: '30px',
         textAlign: 'center'
       }}>
         <p style={{
           margin: '0',
-          color: 'rgba(255, 255, 255, 0.9)',
+          color: '#000000',
           fontSize: '16px',
           lineHeight: '1.6'
         }}>
@@ -117,22 +106,20 @@ const Projects = () => {
       }}>
         {projects.map((project) => (
           <div key={project.id} style={{
-            background: 'rgba(255, 255, 255, 0.05)',
+            background: 'rgba(0, 0, 0, 0.05)',
             borderRadius: '16px',
             padding: '25px',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
+            border: '1px solid rgba(0, 0, 0, 0.1)',
             transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
             cursor: 'pointer'
           }}
           onMouseOver={(e) => {
             e.target.style.transform = 'translateY(-8px)'
             e.target.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.2)'
-            e.target.style.background = 'rgba(255, 255, 255, 0.08)'
           }}
           onMouseOut={(e) => {
             e.target.style.transform = 'translateY(0)'
             e.target.style.boxShadow = 'none'
-            e.target.style.background = 'rgba(255, 255, 255, 0.05)'
           }}>
             {/* Project Header */}
             <div style={{
@@ -157,7 +144,7 @@ const Projects = () => {
               <div style={{ flex: 1 }}>
                 <h3 style={{
                   margin: '0 0 8px 0',
-                  color: 'rgba(255, 255, 255, 0.95)',
+                  color: '#000000',
                   fontSize: '18px',
                   fontWeight: '600'
                 }}>
@@ -180,7 +167,7 @@ const Projects = () => {
             {/* Project Description */}
             <p style={{
               margin: '0 0 20px 0',
-              color: 'rgba(255, 255, 255, 0.8)',
+              color: '#000000',
               fontSize: '14px',
               lineHeight: '1.6'
             }}>
@@ -191,7 +178,7 @@ const Projects = () => {
             <div style={{ marginBottom: '20px' }}>
               <h4 style={{
                 margin: '0 0 10px 0',
-                color: 'rgba(255, 255, 255, 0.9)',
+                color: '#000000',
                 fontSize: '14px',
                 fontWeight: '600'
               }}>
@@ -204,8 +191,8 @@ const Projects = () => {
               }}>
                 {project.technologies.map((tech, index) => (
                   <span key={index} style={{
-                    background: 'rgba(255, 255, 255, 0.1)',
-                    color: 'rgba(255, 255, 255, 0.8)',
+                    background: 'rgba(0, 0, 0, 0.1)',
+                    color: '#000000',
                     padding: '4px 10px',
                     borderRadius: '8px',
                     fontSize: '12px',
@@ -221,7 +208,7 @@ const Projects = () => {
             <div style={{ marginBottom: '20px' }}>
               <h4 style={{
                 margin: '0 0 10px 0',
-                color: 'rgba(255, 255, 255, 0.9)',
+                color: '#000000',
                 fontSize: '14px',
                 fontWeight: '600'
               }}>
@@ -230,7 +217,7 @@ const Projects = () => {
               <ul style={{
                 margin: '0',
                 padding: '0 0 0 20px',
-                color: 'rgba(255, 255, 255, 0.8)',
+                color: '#000000',
                 fontSize: '13px',
                 lineHeight: '1.5'
               }}>
@@ -249,28 +236,31 @@ const Projects = () => {
               justifyContent: 'flex-end'
             }}>
               <button style={{
-                background: 'rgba(255, 255, 255, 0.1)',
-                border: '1px solid rgba(255, 255, 255, 0.2)',
-                color: 'rgba(255, 255, 255, 0.9)',
+                background: 'linear-gradient(135deg, #FF6B6B 0%, #FF8E8E 100%)',
+                border: 'none',
+                color: 'white',
                 padding: '8px 16px',
                 borderRadius: '8px',
                 fontSize: '12px',
                 fontWeight: '500',
                 cursor: 'pointer',
-                transition: 'all 0.2s ease'
+                transition: 'all 0.2s ease',
+                boxShadow: '0 4px 12px rgba(255, 107, 107, 0.3)'
               }}
               onMouseOver={(e) => {
-                e.target.style.background = 'rgba(255, 255, 255, 0.2)'
+                e.target.style.transform = 'scale(1.05)'
+                e.target.style.boxShadow = '0 6px 16px rgba(255, 107, 107, 0.4)'
               }}
               onMouseOut={(e) => {
-                e.target.style.background = 'rgba(255, 255, 255, 0.1)'
+                e.target.style.transform = 'scale(1)'
+                e.target.style.boxShadow = '0 4px 12px rgba(255, 107, 107, 0.3)'
               }}
               onClick={() => window.open(project.github, '_blank')}>
                 View Code
               </button>
-              {project.status === 'Completed' && (
+              {project.status === 'Completed' && project.demo !== '#' && (
                 <button style={{
-                  background: 'linear-gradient(135deg, #007ACC 0%, #005A9E 100%)',
+                  background: 'linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%)',
                   border: 'none',
                   color: 'white',
                   padding: '8px 16px',
@@ -278,13 +268,16 @@ const Projects = () => {
                   fontSize: '12px',
                   fontWeight: '500',
                   cursor: 'pointer',
-                  transition: 'all 0.2s ease'
+                  transition: 'all 0.2s ease',
+                  boxShadow: '0 4px 12px rgba(78, 205, 196, 0.3)'
                 }}
                 onMouseOver={(e) => {
                   e.target.style.transform = 'scale(1.05)'
+                  e.target.style.boxShadow = '0 6px 16px rgba(78, 205, 196, 0.4)'
                 }}
                 onMouseOut={(e) => {
                   e.target.style.transform = 'scale(1)'
+                  e.target.style.boxShadow = '0 4px 12px rgba(78, 205, 196, 0.3)'
                 }}>
                   Live Demo
                 </button>
