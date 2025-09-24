@@ -1,6 +1,5 @@
 import React from 'react'
-import ReactMarkdown from 'react-markdown'
-import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaMapMarkerAlt } from 'react-icons/fa'
+import { FaLinkedin, FaGithub, FaMapMarkerAlt } from 'react-icons/fa'
 
 // Reusable Resume Section Component
 const ResumeSection = ({ title, children, className = "" }) => (
@@ -15,18 +14,6 @@ const ResumeSection = ({ title, children, className = "" }) => (
 // Contact Info Component
 const ContactInfo = ({ contact }) => (
   <div className="flex flex-wrap gap-x-4 gap-y-2 text-gray-900 text-base mb-8">
-    <div className="flex items-center gap-2">
-      <FaEnvelope className="text-gray-900" />
-      <a href={`mailto:${contact.email}`} className="text-indigo-600 hover:text-indigo-700 transition-colors">
-        {contact.email}
-      </a>
-    </div>
-    <div className="flex items-center gap-2">
-      <FaPhone className="text-gray-900" />
-      <a href={`tel:${contact.phone}`} className="text-indigo-600 hover:text-indigo-700 transition-colors">
-        {contact.phone}
-      </a>
-    </div>
     <div className="flex items-center gap-2">
       <FaMapMarkerAlt className="text-gray-900" />
       <span>{contact.location}</span>
@@ -49,17 +36,22 @@ const ContactInfo = ({ contact }) => (
 // Experience Item Component
 const ExperienceItem = ({ experience }) => (
   <div className="mb-6">
-    <div className="flex justify-between items-start mb-2">
-      <div>
-        <h3 className="text-lg font-semibold text-gray-900 mb-1">{experience.title}</h3>
-        <p className="text-base text-gray-700 mb-1">{experience.company}</p>
-        <p className="text-sm text-gray-600">{experience.location}</p>
-      </div>
-      <span className="text-sm text-gray-600 font-medium">{experience.dates}</span>
+    <div className="flex justify-between items-baseline">
+      <h3 className="text-lg font-semibold text-gray-900">{experience.title}</h3>
+      <span className="text-sm text-gray-500">{experience.dates}</span>
     </div>
-    <div className="prose prose-sm max-w-none text-gray-900">
-      <ReactMarkdown>{experience.description}</ReactMarkdown>
-    </div>
+    <p className="text-base text-gray-700 mb-2">{experience.company}</p>
+    
+    {/* Inline styles to guarantee bullet points render correctly */}
+    <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
+      {experience.description.map((point, index) => (
+        <li 
+          key={index}
+          className="mb-1 text-gray-900"
+          dangerouslySetInnerHTML={{ __html: point }}
+        />
+      ))}
+    </ul>
   </div>
 )
 
@@ -92,19 +84,22 @@ const EducationItem = ({ education }) => (
 // Project Item Component
 const ProjectItem = ({ project }) => (
   <div className="mb-6">
-    <div className="flex justify-between items-start mb-2">
-      <div>
-        <h3 className="text-lg font-semibold text-gray-900 mb-1">{project.name}</h3>
-        <p className="text-sm text-gray-600">{project.location}</p>
-      </div>
-      <div className="text-right">
-        <span className="text-sm text-gray-600 font-medium">{project.dates}</span>
-        <p className="text-base text-gray-700 mt-1">{project.technologies}</p>
-      </div>
+    <div className="flex justify-between items-baseline">
+      <h3 className="text-lg font-semibold text-gray-900">{project.name}</h3>
+      <span className="text-sm text-gray-500">{project.dates}</span>
     </div>
-    <div className="prose prose-sm max-w-none text-gray-900">
-      <ReactMarkdown>{project.description}</ReactMarkdown>
-    </div>
+    <p className="text-base text-gray-700 mb-1">{project.technologies}</p>
+    
+    {/* Inline styles to guarantee bullet points render correctly */}
+    <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
+      {project.description.map((point, index) => (
+        <li 
+          key={index}
+          className="mb-1 text-gray-900"
+          dangerouslySetInnerHTML={{ __html: point }}
+        />
+      ))}
+    </ul>
   </div>
 )
 
@@ -142,9 +137,15 @@ const Resume = ({ resumeData: propResumeData }) => {
       {/* Professional Summary */}
       {resumeData.summary && (
         <ResumeSection title="Professional Summary">
-          <div className="prose prose-sm max-w-none text-gray-900">
-            <ReactMarkdown>{resumeData.summary}</ReactMarkdown>
-          </div>
+          <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
+            {resumeData.summary.map((point, index) => (
+              <li 
+                key={index}
+                className="mb-1 text-gray-900"
+                dangerouslySetInnerHTML={{ __html: point }}
+              />
+            ))}
+          </ul>
         </ResumeSection>
       )}
 
@@ -188,11 +189,11 @@ const Resume = ({ resumeData: propResumeData }) => {
 const defaultResumeData = {
   name: "Justin Hernandez-Tovalin",
   title: "Software Engineer",
-  summary: `* **Full-stack developer** with expertise in React, Next.js, and database optimization, delivering scalable solutions for collaborative team environments.
-* Proven track record of **increasing operational efficiency by 25%** and **reducing manual processes by 50%** through innovative problem-solving and technical implementation.`,
+  summary: [
+    '<strong>Full-stack developer</strong> with expertise in React, Next.js, and database optimization, delivering scalable solutions for collaborative team environments.',
+    'Proven track record of <strong>increasing operational efficiency by 25%</strong> and <strong>reducing manual processes by 50%</strong> through innovative problem-solving and technical implementation.'
+  ],
   contact: {
-    email: "jTovalin10@gmail.com",
-    phone: "(253) 205-7966",
     location: "Seattle, WA",
     linkedin: "https://www.linkedin.com/in/justin-hernandez-tovalin-uw2026",
     github: "https://github.com/JTovalin10"
@@ -212,19 +213,23 @@ const defaultResumeData = {
       company: "VNL Entertainment Games",
       location: "Seattle, WA",
       dates: "April 2025 – Present",
-      description: `* **Developed** responsive React components within Next.js framework, **enhancing website performance** and maintainability
-* **Streamlined** development workflow with 4 teammates, ensuring **consistent code integration** and timely delivery
-* **Optimized** NoSQL database queries, **improving data retrieval speeds** and application responsiveness
-* **Crafted** responsive UI elements using Bootstrap, delivering **seamless cross-device experiences**`
+      description: [
+        'Engineered responsive <strong>React components</strong> within Next.js framework, <strong>enhancing website performance</strong> and maintainability.',
+        'Streamlined development workflow with 4 teammates, ensuring <strong>consistent code integration</strong> and timely delivery.',
+        'Optimized <strong>NoSQL database queries</strong>, <strong>improving data retrieval speeds</strong> and application responsiveness.',
+        'Crafted responsive UI elements using Bootstrap, delivering <strong>seamless cross-device experiences</strong>.'
+      ]
     },
     {
       title: "Crew Member",
       company: "Planet Fitness",
       location: "Milton, WA",
       dates: "March 2022 – September 2024",
-      description: `* **Trained** 5+ new employees on DataTrak, **increasing operational efficiency by 25%** through system shortcuts
-* **Reduced** manual check-in time by **50%** with barcode updates, improving member flow during peak hours
-* **Promoted** positive team environment through effective communication and leadership`
+      description: [
+        'Trained <strong>5+ new employees</strong> on DataTrak, <strong>increasing operational efficiency by 25%</strong> through system shortcuts.',
+        'Reduced manual check-in time by <strong>50%</strong> with barcode updates, improving member flow during peak hours.',
+        'Promoted positive team environment through effective communication and leadership.'
+      ]
     }
   ],
   projects: [
@@ -233,18 +238,22 @@ const defaultResumeData = {
       location: "Seattle, WA",
       dates: "April 2025 - April 2025",
       technologies: "React, TailwindCSS, TypeScript",
-      description: `* **Engineered** high-performance React TypeScript application with **secure authentication and 2FA**
-* **Designed** responsive dashboard UI with **color-coded visual indicators** for assignment prioritization
-* **Architected** robust API integration with **retry mechanisms** and comprehensive error handling`
+      description: [
+        'Engineered high-performance React TypeScript application with <strong>secure authentication and 2FA</strong>.',
+        'Designed responsive dashboard UI with <strong>color-coded visual indicators</strong> for assignment prioritization.',
+        'Architected robust API integration with <strong>retry mechanisms</strong> and comprehensive error handling.'
+      ]
     },
     {
       name: "E-Commerce Store",
       location: "Seattle, WA",
       dates: "December 2024 - December 2024",
       technologies: "HTML/CSS, JavaScript, SQL, Node.js",
-      description: `* **Developed** fully functional e-commerce website using **Node.js and JavaScript**
-* **Built** robust backend architecture handling **product listings and secure transactions**
-* **Implemented** dynamic frontend features with **responsive design** and enhanced user experience`
+      description: [
+        'Developed fully functional e-commerce website using <strong>Node.js and JavaScript</strong>.',
+        'Built robust backend architecture handling <strong>product listings and secure transactions</strong>.',
+        'Implemented dynamic frontend features with <strong>responsive design</strong> and enhanced user experience.'
+      ]
     }
   ],
   clubs: [
@@ -253,15 +262,17 @@ const defaultResumeData = {
       company: "Software Engineer Career Club",
       location: "Seattle, WA",
       dates: "April 2025 - Present",
-      description: `* **Engineered** career advancement applications through **collaborative development cycles**
-* **Spearheaded** Hispanic recruitment initiatives through **targeted community outreach**
-* **Amplified** Hispanic community visibility through **strategic advocacy programs**`
+      description: [
+        'Engineered career advancement applications through <strong>collaborative development cycles</strong>.',
+        'Spearheaded Hispanic recruitment initiatives through <strong>targeted community outreach</strong>.',
+        'Amplified Hispanic community visibility through <strong>strategic advocacy programs</strong>.'
+      ]
     }
   ],
   skills: {
     "Technical Skills": "Programming (Java, HTML/CSS, JavaScript, TypeScript, Node.js, Python, Flask, MySQL, C, C++), Microsoft Azure, Database Programming, Visual Studio Code, Terminal, Problem-Solving Skills, Communication, Teamwork & Leadership, Collaboration, Debugging, API Design, REST APIs, Object-Oriented Programming (OOP), Git, Version Control, Troubleshooting, Interpersonal Skills, Verbal Communication, Compliance, Linux/Windows Environment, Back-end Development",
     "Languages": "English (Native), Spanish (Fluent)",
-    "Interests": "Math, weightlifting, video games, programming, algorithms, swimming, PC hardware, personal finance, credit, investing, web development, learning emerging technologies, user interfaces, gaming"
+    "Interests": "Math, weightlifting, video games, programming, algorithms, swimming, PC hardware, personal finance, credit, investing, learning emerging technologies, gaming"
   }
 }
 
