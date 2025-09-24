@@ -3,30 +3,32 @@ import { FaLinkedin, FaGithub, FaMapMarkerAlt } from 'react-icons/fa'
 
 // Reusable Resume Section Component
 const ResumeSection = ({ title, children, className = "" }) => (
-  <div className={`mt-10 ${className}`}>
-    <h2 className="text-2xl font-bold uppercase tracking-wide text-gray-900 border-b-2 border-gray-200 pb-2 mb-4">
+  <div className={`mt-8 ${className}`}>
+    <h2 className="text-xl md:text-2xl font-semibold tracking-wider uppercase text-slate-900 bg-slate-100 border-l-4 border-teal-500 px-3 py-2 rounded-md">
       {title}
     </h2>
-    {children}
+    <div className="mt-4">
+      {children}
+    </div>
   </div>
 )
 
 // Contact Info Component
 const ContactInfo = ({ contact }) => (
-  <div className="flex flex-wrap gap-x-4 gap-y-2 text-gray-900 text-base mb-8">
+  <div className="flex flex-col gap-2 text-slate-800 text-base">
     <div className="flex items-center gap-2">
-      <FaMapMarkerAlt className="text-gray-900" />
+      <FaMapMarkerAlt className="text-slate-700" />
       <span>{contact.location}</span>
     </div>
     <div className="flex items-center gap-2">
-      <FaLinkedin className="text-gray-900" />
-      <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-700 transition-colors">
+      <FaLinkedin className="text-slate-700" />
+      <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" className="text-teal-700 hover:text-teal-800 transition-colors">
         LinkedIn
       </a>
     </div>
     <div className="flex items-center gap-2">
-      <FaGithub className="text-gray-900" />
-      <a href={contact.github} target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-700 transition-colors">
+      <FaGithub className="text-slate-700" />
+      <a href={contact.github} target="_blank" rel="noopener noreferrer" className="text-teal-700 hover:text-teal-800 transition-colors">
         GitHub
       </a>
     </div>
@@ -36,18 +38,19 @@ const ContactInfo = ({ contact }) => (
 // Experience Item Component
 const ExperienceItem = ({ experience }) => (
   <div className="mb-6">
-    <div className="flex justify-between items-baseline">
-      <h3 className="text-lg font-semibold text-gray-900">{experience.title}</h3>
-      <span className="text-sm text-gray-500">{experience.dates}</span>
+    <div className="flex items-start justify-between gap-4">
+      <div>
+        <h3 className="text-lg md:text-xl font-semibold text-slate-900">{experience.title}</h3>
+        <p className="text-base text-slate-700">{experience.company}</p>
+      </div>
+      <div className="text-sm text-slate-500 whitespace-nowrap">{experience.dates}</div>
     </div>
-    <p className="text-base text-gray-700 mb-2">{experience.company}</p>
-    
     {/* Inline styles to guarantee bullet points render correctly */}
     <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
       {experience.description.map((point, index) => (
         <li 
           key={index}
-          className="mb-1 text-gray-900"
+          className="mb-1 text-slate-800 leading-relaxed"
           dangerouslySetInnerHTML={{ __html: point }}
         />
       ))}
@@ -60,18 +63,18 @@ const EducationItem = ({ education }) => (
   <div className="mb-6">
     <div className="flex justify-between items-start mb-2">
       <div>
-        <h3 className="text-lg font-semibold text-gray-900 mb-1">{education.degree}</h3>
-        <p className="text-base text-gray-700 mb-1">{education.university}</p>
-        <p className="text-sm text-gray-600">{education.location}</p>
+        <h3 className="text-lg font-semibold text-slate-900 mb-1">{education.degree}</h3>
+        <p className="text-base text-slate-700 mb-1">{education.university}</p>
+        <p className="text-sm text-slate-600">{education.location}</p>
       </div>
-      <span className="text-sm text-gray-600 font-medium">{education.graduationDate}</span>
+      <span className="text-sm text-slate-600 font-medium">{education.graduationDate}</span>
     </div>
     {education.coursework && (
       <div className="mt-2">
-        <p className="text-base text-gray-900 font-semibold mb-1">Relevant Coursework:</p>
+        <p className="text-base text-slate-900 font-semibold mb-1">Relevant Coursework:</p>
         <ul className="ml-6 space-y-1">
           {education.coursework.split(', ').map((course, index) => (
-            <li key={index} className="text-base text-gray-900 leading-relaxed list-disc">
+            <li key={index} className="text-base text-slate-800 leading-relaxed list-disc">
               {course.trim()}
             </li>
           ))}
@@ -85,17 +88,16 @@ const EducationItem = ({ education }) => (
 const ProjectItem = ({ project }) => (
   <div className="mb-6">
     <div className="flex justify-between items-baseline">
-      <h3 className="text-lg font-semibold text-gray-900">{project.name}</h3>
-      <span className="text-sm text-gray-500">{project.dates}</span>
+      <h3 className="text-lg font-semibold text-slate-900">{project.name}</h3>
+      <span className="text-sm text-slate-500">{project.dates}</span>
     </div>
-    <p className="text-base text-gray-700 mb-1">{project.technologies}</p>
-    
+    <p className="text-base text-slate-700 mb-1">{project.technologies}</p>
     {/* Inline styles to guarantee bullet points render correctly */}
     <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
       {project.description.map((point, index) => (
         <li 
           key={index}
-          className="mb-1 text-gray-900"
+          className="mb-1 text-slate-800 leading-relaxed"
           dangerouslySetInnerHTML={{ __html: point }}
         />
       ))}
@@ -105,17 +107,20 @@ const ProjectItem = ({ project }) => (
 
 // Skills Component
 const SkillsSection = ({ skills }) => (
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div className="space-y-6">
     {Object.entries(skills).map(([category, skillList]) => (
-      <div key={category} className="bg-white p-4 border border-gray-200 rounded-lg">
-        <h4 className="text-lg font-semibold text-gray-900 mb-2">{category}</h4>
-        <ul className="ml-6 space-y-1">
-          {skillList.split(', ').map((skill, index) => (
-            <li key={index} className="text-base text-gray-900 leading-relaxed list-disc">
+      <div key={category}>
+        <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2">{category}</h4>
+        <div className="flex flex-wrap gap-2">
+          {skillList.split(',').map((skill, index) => (
+            <span
+              key={`${category}-${index}`}
+              className="inline-block rounded-full bg-slate-200 text-slate-800 px-3 py-1 text-xs font-medium"
+            >
               {skill.trim()}
-            </li>
+            </span>
           ))}
-        </ul>
+        </div>
       </div>
     ))}
   </div>
@@ -125,48 +130,70 @@ const SkillsSection = ({ skills }) => (
 const Resume = ({ resumeData: propResumeData }) => {
   const resumeData = propResumeData || defaultResumeData
 
-    return (
-    <div className="bg-white px-10 py-8 max-w-4xl mx-auto font-['SF_Pro_Text','Inter',sans-serif] text-gray-900 overflow-y-auto h-full">
+  return (
+    <div className="bg-slate-50 px-6 md:px-10 py-8 max-w-5xl mx-auto font-['Inter','Manrope',sans-serif] text-slate-800 overflow-y-auto h-full">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-4xl font-bold text-gray-900 mb-2">{resumeData.name}</h1>
-        <p className="text-xl text-gray-700 mb-6">{resumeData.title}</p>
-        <ContactInfo contact={resumeData.contact} />
+        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-1">{resumeData.name}</h1>
+        <p className="text-lg md:text-xl text-slate-700">{resumeData.title}</p>
+        <div className="mt-5">
+          <a
+            href="/Justin Hernandez Tovalin 2025.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-md bg-teal-600 hover:bg-teal-700 active:bg-teal-800 text-white px-4 py-2 text-sm font-semibold shadow-sm transition-transform will-change-transform"
+          >
+            View Resume (PDF)
+          </a>
+        </div>
       </div>
 
-      {/* Education */}
-      <ResumeSection title="Education">
-        {resumeData.education.map((edu, index) => (
-          <EducationItem key={index} education={edu} />
-        ))}
-      </ResumeSection>
+      {/* Body Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+        {/* Main Column */}
+        <div className="md:col-span-8 lg:col-span-9">
+          {/* Work Experience */}
+          <ResumeSection title="Work Experience">
+            {resumeData.experience.map((exp, index) => (
+              <ExperienceItem key={index} experience={exp} />
+            ))}
+          </ResumeSection>
 
-      {/* Work Experience */}
-      <ResumeSection title="Work Experience">
-        {resumeData.experience.map((exp, index) => (
-          <ExperienceItem key={index} experience={exp} />
-        ))}
-      </ResumeSection>
+          {/* Personal Projects */}
+          <ResumeSection title="Personal Projects">
+            {resumeData.projects.map((project, index) => (
+              <ProjectItem key={index} project={project} />
+            ))}
+          </ResumeSection>
 
-      {/* Personal Projects */}
-      <ResumeSection title="Personal Projects">
-        {resumeData.projects.map((project, index) => (
-          <ProjectItem key={index} project={project} />
-        ))}
-      </ResumeSection>
+          {/* Education */}
+          <ResumeSection title="Education">
+            {resumeData.education.map((edu, index) => (
+              <EducationItem key={index} education={edu} />
+            ))}
+          </ResumeSection>
 
-      {/* Clubs */}
-      <ResumeSection title="Clubs">
-        {resumeData.clubs.map((club, index) => (
-          <ExperienceItem key={index} experience={club} />
-        ))}
-      </ResumeSection>
+          {/* Clubs */}
+          <ResumeSection title="Clubs">
+            {resumeData.clubs.map((club, index) => (
+              <ExperienceItem key={index} experience={club} />
+            ))}
+          </ResumeSection>
+        </div>
 
-      {/* Skills and Interests */}
-      <ResumeSection title="Skills and Interests">
-        <SkillsSection skills={resumeData.skills} />
-      </ResumeSection>
-                </div>
+        {/* Sidebar */}
+        <aside className="md:col-span-4 lg:col-span-3 space-y-8">
+          <div className="bg-white/70 rounded-lg border border-slate-200 p-4 shadow-sm">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-900 mb-3">Contact</h3>
+            <ContactInfo contact={resumeData.contact} />
+          </div>
+          <div className="bg-white/70 rounded-lg border border-slate-200 p-4 shadow-sm">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-900 mb-3">Skills & Interests</h3>
+            <SkillsSection skills={resumeData.skills} />
+          </div>
+        </aside>
+      </div>
+    </div>
   )
 }
 

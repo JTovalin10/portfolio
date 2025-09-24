@@ -80,6 +80,12 @@ const Dock = () => {
       return
     }
 
+    // Open resume PDF in a new browser tab instead of an in-app window
+    if (item.type === 'resume') {
+      window.open('/Justin Hernandez Tovalin 2025.pdf', '_blank', 'noopener,noreferrer')
+      return
+    }
+
     // Open window using the state management function
     openWindow({
       type: item.type,
