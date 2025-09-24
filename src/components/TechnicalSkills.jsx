@@ -1,3 +1,5 @@
+import React from 'react'
+
 const TechnicalSkills = () => {
     const skillCategories = [
         {
@@ -46,81 +48,56 @@ const TechnicalSkills = () => {
         }
     ];
 
-    const getLevelColor = (level) => {
+    const getProficiencyBadge = (level) => {
+        const baseClasses = "px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide"
+        
         switch (level) {
-            case 'Advanced': return '#28ca42';
-            case 'Intermediate': return '#FFD54F';
-            case 'Beginner': return '#ff6b6b';
-            default: return '#E1BEE7';
+            case 'Advanced':
+                return `${baseClasses} bg-emerald-500 text-white`
+            case 'Intermediate':
+                return `${baseClasses} bg-amber-500 text-gray-900`
+            case 'Beginner':
+                return `${baseClasses} bg-blue-500 text-white`
+            default:
+                return `${baseClasses} bg-gray-500 text-white`
         }
     };
 
     return (
-        <div style={{ padding: '20px', lineHeight: '1.6' }}>
-            <div style={{ fontSize: '24px', marginBottom: '20px', textAlign: 'center' }}>
-                ⚙️ Technical Skills
-            </div>
-            
-            <div style={{ marginBottom: '30px', textAlign: 'center' }}>
-                <p style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '16px', marginBottom: '20px' }}>
+        <div className="p-8 bg-white min-h-full">
+            {/* Header Section */}
+            <div className="text-center mb-12">
+                <div className="flex items-center justify-center gap-3 mb-4">
+                    <div className="text-4xl">⚙️</div>
+                    <h1 className="text-3xl font-bold text-gray-900">Technical Skills</h1>
+                </div>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                     A comprehensive overview of my technical expertise and development tools
                 </p>
             </div>
 
-            <div style={{ display: 'grid', gap: '25px' }}>
+            {/* Skills Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
                 {skillCategories.map((category, categoryIndex) => (
-                    <div key={categoryIndex} style={{
-                        background: 'rgba(255, 255, 255, 0.05)',
-                        borderRadius: '16px',
-                        padding: '20px',
-                        border: '1px solid rgba(255, 255, 255, 0.1)',
-                        boxShadow: '0 8px 25px rgba(0, 0, 0, 0.1)'
-                    }}>
-                        <h3 style={{ 
-                            margin: '0 0 20px 0', 
-                            color: 'rgba(255, 255, 255, 0.95)', 
-                            fontSize: '18px',
-                            fontWeight: '600',
-                            textAlign: 'center'
-                        }}>
+                    <div key={categoryIndex} className="bg-gray-50 rounded-xl p-6 shadow-sm border border-gray-200">
+                        <h2 className="text-xl font-semibold text-gray-900 mb-6 text-center border-b border-gray-300 pb-3">
                             {category.title}
-                        </h3>
+                        </h2>
                         
-                        <div style={{ 
-                            display: 'grid', 
-                            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
-                            gap: '15px' 
-                        }}>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             {category.skills.map((skill, skillIndex) => (
-                                <div key={skillIndex} style={{
-                                    background: 'rgba(255, 255, 255, 0.08)',
-                                    borderRadius: '12px',
-                                    padding: '15px',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '12px',
-                                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                                    border: '1px solid rgba(255, 255, 255, 0.1)'
-                                }}>
-                                    <div style={{ fontSize: '24px' }}>{skill.logo}</div>
-                                    <div style={{ flex: 1 }}>
-                                        <div style={{ 
-                                            fontWeight: '500', 
-                                            color: 'rgba(255, 255, 255, 0.9)',
-                                            marginBottom: '4px'
-                                        }}>
-                                            {skill.name}
+                                <div key={skillIndex} className="bg-white rounded-lg p-4 shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-200">
+                                    <div className="flex items-center gap-3">
+                                        <div className="text-2xl w-8 h-8 flex items-center justify-center">
+                                            {skill.logo}
                                         </div>
-                                        <div style={{
-                                            fontSize: '12px',
-                                            color: getLevelColor(skill.level),
-                                            fontWeight: '500',
-                                            background: `${getLevelColor(skill.level)}20`,
-                                            padding: '2px 8px',
-                                            borderRadius: '10px',
-                                            display: 'inline-block'
-                                        }}>
-                                            {skill.level}
+                                        <div className="flex-1 min-w-0">
+                                            <h3 className="font-semibold text-gray-900 text-sm mb-2 truncate">
+                                                {skill.name}
+                                            </h3>
+                                            <span className={getProficiencyBadge(skill.level)}>
+                                                {skill.level}
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
@@ -130,51 +107,24 @@ const TechnicalSkills = () => {
                 ))}
             </div>
 
-            <div style={{ 
-                marginTop: '30px',
-                background: 'linear-gradient(135deg, #007ACC 0%, #005A9E 100%)',
-                padding: '20px',
-                borderRadius: '12px',
-                color: 'white',
-                textAlign: 'center',
-                boxShadow: '0 8px 25px rgba(0, 122, 204, 0.3)',
-                border: '1px solid rgba(255, 255, 255, 0.2)'
-            }}>
-                <h3 style={{ margin: '0 0 10px 0' }}>💻 Development Environment</h3>
-                <p style={{ margin: '0 0 15px 0', opacity: 0.9 }}>
-                    Primary development setup and preferred tools
-                </p>
-                <div style={{ 
-                    display: 'flex', 
-                    justifyContent: 'center', 
-                    gap: '20px',
-                    flexWrap: 'wrap'
-                }}>
-                    <span style={{
-                        background: 'rgba(255, 255, 255, 0.2)',
-                        padding: '8px 16px',
-                        borderRadius: '20px',
-                        fontSize: '14px',
-                        fontWeight: '500'
-                    }}>
+            {/* Development Environment Section */}
+            <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl p-8 text-white shadow-lg">
+                <div className="text-center mb-6">
+                    <div className="text-3xl mb-3">💻</div>
+                    <h3 className="text-2xl font-bold mb-2">Development Environment</h3>
+                    <p className="text-blue-100 text-lg">
+                        Primary development setup and preferred tools
+                    </p>
+                </div>
+                
+                <div className="flex flex-wrap justify-center gap-4">
+                    <span className="bg-white bg-opacity-20 backdrop-blur-sm px-6 py-3 rounded-full text-sm font-semibold border border-white border-opacity-30">
                         Visual Studio Code
                     </span>
-                    <span style={{
-                        background: 'rgba(255, 255, 255, 0.2)',
-                        padding: '8px 16px',
-                        borderRadius: '20px',
-                        fontSize: '14px',
-                        fontWeight: '500'
-                    }}>
+                    <span className="bg-white bg-opacity-20 backdrop-blur-sm px-6 py-3 rounded-full text-sm font-semibold border border-white border-opacity-30">
                         macOS Development
                     </span>
-                    <span style={{
-                        background: 'rgba(255, 255, 255, 0.2)',
-                        padding: '8px 16px',
-                        borderRadius: '20px',
-                        fontSize: '14px',
-                        fontWeight: '500'
-                    }}>
+                    <span className="bg-white bg-opacity-20 backdrop-blur-sm px-6 py-3 rounded-full text-sm font-semibold border border-white border-opacity-30">
                         Git Workflow
                     </span>
                 </div>
