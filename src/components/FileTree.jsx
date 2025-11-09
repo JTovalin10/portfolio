@@ -1,6 +1,5 @@
-import { Folder, ChevronRight } from 'lucide-react';
 import { theme } from '../config/theme';
-import { fileSystem } from '../config/fileSystem';
+import { fileSystem, Folder, NavArrowRight, NavArrowLeft } from '../config/fileSystem';
 import { CONFIG } from '../config/config';
 import { useState, useEffect } from 'react';
 
@@ -66,7 +65,7 @@ const FileTree = ({ activeFile, setActiveFile, onBackToHome }) => {
               e.target.style.backgroundColor = 'var(--nord-sidebar-bg)';
             }}
           >
-            <ChevronRight size={20} />
+            <NavArrowRight width={20} height={20} />
           </button>
         )}
 
@@ -119,7 +118,7 @@ const FileTree = ({ activeFile, setActiveFile, onBackToHome }) => {
                     e.currentTarget.style.backgroundColor = 'transparent';
                   }}
                 >
-                  <Folder size={18} className={theme.primary} />
+                  <Folder width={18} height={18} className={theme.primary} />
                   <span className="fw-bold" style={{ color: 'var(--nord-text)' }}>{CONFIG.name}</span>
                 </div>
                 <button
@@ -134,7 +133,7 @@ const FileTree = ({ activeFile, setActiveFile, onBackToHome }) => {
                     justifyContent: 'center'
                   }}
                 >
-                  <ChevronRight size={20} style={{ transform: 'rotate(180deg)' }} />
+                  <NavArrowLeft width={20} height={20} />
                 </button>
               </div>
               <div className="p-3 overflow-auto" style={{ flex: 1, minHeight: 0, overflowY: 'auto' }}>
@@ -165,7 +164,7 @@ const FileTree = ({ activeFile, setActiveFile, onBackToHome }) => {
                           }
                         }}
                       >
-                        <file.icon size={16} />
+                        <file.icon width={16} height={16} />
                         <span>{file.name}</span>
                       </button>
                     </li>
@@ -208,7 +207,7 @@ const FileTree = ({ activeFile, setActiveFile, onBackToHome }) => {
           e.currentTarget.style.backgroundColor = 'transparent';
         }}
       >
-        <Folder size={18} className={theme.primary} />
+        <Folder width={18} height={18} className={theme.primary} />
         <span className="fw-bold" style={{ color: 'var(--nord-text)' }}>{CONFIG.name}</span>
       </div>
       <div className="p-3 overflow-auto" style={{ flex: 1, minHeight: 0, overflowY: 'auto' }}>
@@ -239,7 +238,7 @@ const FileTree = ({ activeFile, setActiveFile, onBackToHome }) => {
                   }
                 }}
               >
-                <file.icon size={16} />
+                <file.icon width={16} height={16} />
                 <span>{file.name}</span>
               </button>
             </li>

@@ -1,4 +1,4 @@
-import { GitBranch } from 'lucide-react';
+import { GitBranch } from 'iconoir-react';
 import { theme } from '../config/theme';
 import { CONFIG } from '../config/config';
 import Cursor from './Cursor';
@@ -52,7 +52,7 @@ const LualineBar = ({ activeFile }) => {
         ></div>
 
         <Seg bgColor="var(--nord-lualine-section)" textColor="var(--nord-lualine-text)" style={{ flexShrink: 0 }}>
-          <GitBranch size={16} />
+          <GitBranch width={16} height={16} />
           <span>main</span>
         </Seg>
         {/* Powerline Arrow */}

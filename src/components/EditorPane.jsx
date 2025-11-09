@@ -146,7 +146,7 @@ const EditorPane = ({ activeFile }) => {
                 {typeof line === 'object' ? (
                   // Render contact line object
                   <div className="d-flex align-items-center gap-3" style={{ flexWrap: 'wrap' }}>
-                    <line.icon size={16} className={theme.textAccent} />
+                    <line.icon width={16} height={16} className={theme.textAccent} />
                     <span style={{ width: '128px', minWidth: '128px' }}>{line.label}:</span>
                     <Link href={line.href}>{line.value}</Link>
                   </div>

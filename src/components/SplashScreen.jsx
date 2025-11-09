@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import { FileSearch, Sparkles } from 'lucide-react';
+import { Spark } from 'iconoir-react';
 import { theme } from '../config/theme';
 import { fileSystem } from '../config/fileSystem';
 
@@ -137,7 +137,7 @@ const SplashScreen = ({ onNavigate }) => {
   );
 
   const menuItems = [
-    ...fileSystem.map(f => ({ ...f, icon: f.icon || FileSearch })),
+    ...fileSystem.map(f => ({ ...f })),
   ];
 
   // Memoize z positions so they don't change on re-render
@@ -288,7 +288,7 @@ const SplashScreen = ({ onNavigate }) => {
             }}
           >
             <div className="d-flex align-items-center" style={{ flex: 1, minWidth: 0, gap: '16px' }}>
-              <item.icon size={isMobile ? 16 : 18} className={theme.primary} style={{ flexShrink: 0, marginRight: '4px' }} />
+              <item.icon width={isMobile ? 16 : 18} height={isMobile ? 16 : 18} className={theme.primary} style={{ flexShrink: 0, marginRight: '4px' }} />
               <span 
                 className={theme.text}
                 style={{
@@ -321,7 +321,7 @@ const SplashScreen = ({ onNavigate }) => {
           paddingBottom: isMobile ? 'env(safe-area-inset-bottom, 8px)' : '4px'
         }}
       >
-        <Sparkles size={isMobile ? 14 : 16} className={theme.tertiary} />
+        <Spark width={isMobile ? 14 : 16} height={isMobile ? 14 : 16} className={theme.tertiary} />
         <span className={theme.text} style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
           JustinVim loaded in {pageLoadTime ? `${pageLoadTime}ms` : '...'}
         </span>

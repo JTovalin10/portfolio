@@ -1,12 +1,12 @@
-import { Github, Linkedin, Mail, FileText } from 'lucide-react';
 import portfolioData from '../data/portfolio.json';
+import { Github, Linkedin, Mail, Page } from 'iconoir-react';
 
-// Icon mapping for JSON data
+// Icon mapping for JSON data (Iconoir React components)
 const iconMap = {
   Github: Github,
   Linkedin: Linkedin,
   Mail: Mail,
-  FileText: FileText,
+  FileText: Page, // Using Page icon for FileText
 };
 
 // Transform contact lines to include icon components

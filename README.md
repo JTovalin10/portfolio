@@ -1,54 +1,62 @@
-# React + TypeScript + Vite
+# Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A terminal-themed portfolio website inspired by LazyVim, built with React and Vite.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **LazyVim-style Interface**: Terminal-inspired UI with file tree, bufferline, and status bar
+- **Modular Components**: Clean, reusable React components
+- **Responsive Design**: Mobile-friendly with collapsible sidebar
+- **Syntax Highlighting**: Custom C++ and Markdown syntax highlighting
+- **Easy Content Management**: Portfolio data stored in JSON for easy updates
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React 19
+- Vite
+- Bootstrap 5
+- Lucide React (icons)
+- TypeScript (for build configuration)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Project Structure
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
 ```
+src/
+  components/     # React components
+  config/         # Configuration files (theme, file system, config)
+  data/           # Portfolio data (JSON)
+  index.css       # Global styles
+  main.jsx        # Entry point
+  App.jsx         # Main application component
+```
+
+## Editing Portfolio Content
+
+Edit `src/data/portfolio.json` to update:
+- About Me section
+- Projects
+- Technical Skills
+- Hobbies & Interests
+- Contact information
+
+See `src/data/README.md` for detailed instructions on editing the portfolio data.
+
+## License
+
+MIT

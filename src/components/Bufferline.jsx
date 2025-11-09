@@ -1,4 +1,4 @@
-import { X } from 'lucide-react';
+import { Xmark } from 'iconoir-react';
 import { theme } from '../config/theme';
 import { fileSystem } from '../config/fileSystem';
 import { useState, useEffect } from 'react';
@@ -56,9 +56,9 @@ const Bufferline = ({ activeFile, setActiveFile, onBackToHome }) => {
             }
           }}
         >
-          <file.icon size={15} />
+          <file.icon width={15} height={15} />
           <span>{file.name}</span>
-          {activeFile === file.name && <X size={15} className="ms-2" />}
+          {activeFile === file.name && <Xmark width={15} height={15} className="ms-2" />}
         </button>
       ))}
     </div>
