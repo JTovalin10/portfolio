@@ -4,9 +4,20 @@ import CppHighlight from './CppHighlight';
 import MarkdownHighlight from './MarkdownHighlight';
 import PlainText from './PlainText';
 import Link from './Link';
+import { useState, useEffect } from 'react';
 
 // 3. Editor Pane (Main Content)
 const EditorPane = ({ activeFile }) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   // This function generates the array of lines (or objects) to be rendered
   const renderContent = () => {
     switch (activeFile) {
@@ -104,7 +115,10 @@ const EditorPane = ({ activeFile }) => {
           flex: '1 1 0',
           minHeight: 0,
           WebkitOverflowScrolling: 'touch',
-          scrollBehavior: 'smooth'
+          scrollBehavior: 'smooth',
+          paddingBottom: isMobile 
+            ? `calc(12px + 28px + env(safe-area-inset-bottom, 0px) + 60px)` 
+            : '12px'
         }}
       >
         {contentLines.map((line, index) => {
