@@ -46,6 +46,12 @@ export const CONFIG = {
     lines: portfolioData.hobbies.lines,
   },
 
+  // Technical Skills
+  technicalSkills: {
+    title: portfolioData.technicalSkills.title,
+    lines: portfolioData.technicalSkills.lines,
+  },
+
   // Contact Info
   contact: {
     title: portfolioData.contact.title,

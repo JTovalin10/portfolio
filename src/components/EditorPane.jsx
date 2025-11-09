@@ -63,6 +63,13 @@ const EditorPane = ({ activeFile }) => {
           ...CONFIG.hobbies.lines,
         ];
 
+      case 'technical-skills.md':
+        return [
+          CONFIG.technicalSkills.title,
+          "",
+          ...CONFIG.technicalSkills.lines,
+        ];
+
       case 'contact.txt':
         return [
           CONFIG.contact.title,

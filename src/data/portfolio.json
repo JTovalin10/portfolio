@@ -117,6 +117,26 @@
       "My favorite dog breed is the **Shiba Inu**!"
     ]
   },
+  "technicalSkills": {
+    "title": "# technical-skills.md",
+    "lines": [
+      "## Programming Languages",
+      "",
+      "C++ 17, C, Java, JavaScript, TypeScript, Python 3.13, SQL",
+      "",
+      "## Frameworks & Libraries",
+      "",
+      "React, Node.js, Flask, REST APIs, API Design",
+      "",
+      "## Databases",
+      "",
+      "MySQL, sqlite3",
+      "",
+      "## Development Tools",
+      "",
+      "Git, Version Control, Visual Studio Code, neovim, Terminal, Linux/Windows Environment"
+    ]
+  },
   "contact": {
     "title": "# contact.txt",
     "lines": [
