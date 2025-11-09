@@ -4,9 +4,20 @@ import CppHighlight from './CppHighlight';
 import MarkdownHighlight from './MarkdownHighlight';
 import PlainText from './PlainText';
 import Link from './Link';
+import { useState, useEffect } from 'react';
 
 // 3. Editor Pane (Main Content)
 const EditorPane = ({ activeFile }) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   // This function generates the array of lines (or objects) to be rendered
   const renderContent = () => {
     switch (activeFile) {
@@ -97,7 +108,6 @@ const EditorPane = ({ activeFile }) => {
       }}
       >
       <div 
-        className="p-3"
         style={{ 
           overflowY: 'auto',
           overflowX: 'auto',
@@ -105,10 +115,15 @@ const EditorPane = ({ activeFile }) => {
           minHeight: 0,
           WebkitOverflowScrolling: 'touch',
           scrollBehavior: 'smooth',
-          paddingBottom: '150px'
         }}
       >
-        {contentLines.map((line, index) => {
+        <div 
+          style={{ 
+            padding: '12px',
+            paddingBottom: isMobile ? '0' : '200px'
+          }}
+        >
+          {contentLines.map((line, index) => {
           const lineNumber = index + 1;
           return (
             <div 
@@ -167,6 +182,11 @@ const EditorPane = ({ activeFile }) => {
             </div>
           );
         })}
+        {/* Spacer for mobile scrolling - ensures content can scroll past bottom */}
+        {isMobile && (
+          <div style={{ height: '600px', width: '100%' }} />
+        )}
+        </div>
       </div>
     </div>
   );
