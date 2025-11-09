@@ -83,9 +83,6 @@ const EditorPane = ({ activeFile }) => {
   };
 
   const contentLines = renderContent();
-  
-  // Add 5 empty lines at the bottom for easier scrolling on all devices
-  const contentWithPadding = [...contentLines, "", "", "", "", ""];
 
   return (
     <div 
@@ -108,10 +105,10 @@ const EditorPane = ({ activeFile }) => {
           minHeight: 0,
           WebkitOverflowScrolling: 'touch',
           scrollBehavior: 'smooth',
-          paddingBottom: '12px'
+          paddingBottom: '150px'
         }}
       >
-        {contentWithPadding.map((line, index) => {
+        {contentLines.map((line, index) => {
           const lineNumber = index + 1;
           return (
             <div 
