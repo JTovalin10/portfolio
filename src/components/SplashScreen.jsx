@@ -247,9 +247,7 @@ const SplashScreen = ({ onNavigate }) => {
         style={{ 
           maxWidth: isMobile ? '100%' : '448px', 
           width: '100%',
-          padding: isMobile 
-            ? `0 20px calc(80px + env(safe-area-inset-bottom, 0px) + 60px) 20px` 
-            : '0',
+          padding: isMobile ? '0 20px 80px 20px' : '0',
           marginBottom: isMobile ? '20px' : '0'
         }}
       >
