@@ -1,0 +1,144 @@
+{
+  "name": "Justin Hernandez-Tovalin",
+  "host": "portfolio.dev",
+  "about": {
+    "title": "# about.md",
+    "lines": [
+      "Hello! I am a Computer Science student at the University of Washington - Seattle. I love learning about algorithms and how to make programs efficient. I am currently on a journey to becoming a proficient infrastructure engineer, primarily using C++ through my ongoing Project Adam.",
+      "",
+      "What first drew me into programming was game development. Growing up playing video games sparked my curiosity about how they were created. However, it wasn't until university that I finally began to explore this long-standing interest."
+    ]
+  },
+  "projects": [
+    {
+      "title": "// --- Project 1: 'Project Adam' ---",
+      "classDef": "class ProjectAdam {",
+      "public": [
+        "string description = \"20-month systems engineering roadmap from data structures to ARM hypervisors, with a focus on networking and distributed systems. Building systems from first principles entirely in C++. Current personal project spanning from October 2025 to June 2027. Phase 1: Foundation (Data Structures, Algorithms, Networking Primitives). Phase 2: Evolution (DNS Server, UDP from Scratch, TCP from Scratch). Phase 3: Perfection (BitTorrent Client, ARM Hypervisor on Raspberry Pi 5). All projects implemented in C++17 with manual memory management, comprehensive testing, and Google C++ Style Guide compliance.\";",
+        "string[] tech_stack = { \"C++17\", \"GCC\" };",
+        "string[] features = { \"Data structures and algorithms library\", \"Networking primitives (Bloom Filter, Ring Buffer, Radix Tree)\", \"Thread pool with work-stealing\", \"Lock-free data structures\", \"DNS server implementation\", \"UDP from scratch\", \"TCP from scratch with congestion control\", \"BitTorrent client\", \"Custom memory allocators\", \"ARM hypervisor (Type-2) on Raspberry Pi 5\", \"Multiple Linux VMs running simultaneously\" };",
+        "string status = \"In Progress\";"
+      ],
+      "links": {
+        "source_code": "https://github.com/JTovalin10/project-adam"
+      },
+      "closeBrace": "};"
+    },
+    {
+      "title": "// --- Project 2: 'Web Server' ---",
+      "classDef": "class WebServer {",
+      "public": [
+        "string description = \"Multi-threaded HTTP/1.1 web server in C++ from scratch for CSE 333. Utilizes a thread pool to manage concurrent client connections over IPv4/IPv6. Includes a full-text search engine in C with a file-based inverted index built from 10,000+ documents and a multi-index query processor with ranked results.\";",
+        "string[] tech_stack = { \"C++\", \"C\", \"HTTP/1.1\", \"IPv4/IPv6\", \"Threading\", \"Multi-threaded Architecture\" };",
+        "string[] features = { \"Multi-threaded HTTP/1.1 web server\", \"Thread pool for concurrent connections\", \"IPv4/IPv6 support\", \"Full-text search engine\", \"File-based inverted index (10,000+ documents)\", \"Multi-index query processor\", \"Ranked search results\" };"
+      ],
+      "links": {
+      },
+      "closeBrace": "};"
+    },
+    {
+      "title": "// --- Project 3: 'SupplementIQ' ---",
+      "classDef": "class SupplementIQ {",
+      "public": [
+        "string description = \"Web application for supplement transparency and information. Engineered a high-throughput moderation workflow to process 500+ daily submissions, featuring real-time permission checks on Vercel via TypeScript caching. Architected a role-based access control (RBAC) system using Supabase RLS and JWT, achieving sub-50ms response times. Includes status updates and automated migration of approved content.\";",
+        "string[] tech_stack = { \"TypeScript\", \"Next.js\", \"Supabase\", \"Redis\", \"Vercel\", \"CASL\" };",
+        "string[] features = { \"High-throughput moderation workflow (500+ daily submissions)\", \"Real-time permission checks with TypeScript caching\", \"Role-based access control (RBAC) with Supabase RLS and JWT\", \"Sub-50ms response times\", \"112 API endpoints\", \"Automated content migration\", \"Status updates system\", \"Multi-role permission system (6 user roles)\" };",
+        "string status = \"In Progress\";"
+      ],
+      "links": {
+        "source_code": "https://github.com/JTovalin10/SupplementIQ",
+        "live_demo": "https://supplement-iq.vercel.app"
+      },
+      "closeBrace": "};"
+    },
+    {
+      "title": "// --- Project 4: 'GradescopePlus' ---",
+      "classDef": "class GradescopePlus {",
+      "public": [
+        "string description = \"Simple tool for Gradescope that shows assignments due soon and how many days until they are due. Forked a gradescope-api and added the web part so that people can see their assignments easier.\";",
+        "string[] tech_stack = { \"Python\", \"React\", \"Gradescope API\" };",
+        "string[] features = { \"Assignment due date tracking\", \"Days until due calculation\", \"Gradescope integration\", \"Web interface for easier assignment viewing\" };"
+      ],
+      "links": {
+        "source_code": "https://github.com/JTovalin10/gradescope-api",
+        "live_demo": "https://gradescope-plus.vercel.app/"
+      },
+      "closeBrace": "};"
+    },
+    {
+      "title": "// --- Project 5: 'E-Store' ---",
+      "classDef": "class EStore {",
+      "public": [
+        "string description = \"Class project e-commerce platform with product management and SQLite3 database integration.\";",
+        "string[] tech_stack = { \"JavaScript\", \"SQL\", \"HTML\", \"CSS\", \"SQLite3\" };",
+        "string[] features = { \"Product management\", \"SQLite3 database integration\", \"Class project implementation\" };"
+      ],
+      "links": {
+        "source_code": "https://github.com/JTovalin10/E-Commerce-Website"
+      },
+      "closeBrace": "};"
+    }
+  ],
+  "hobbies": {
+    "title": "# hobbies.md",
+    "lines": [
+      "## Fitness & Health",
+      "",
+      "### Swimming",
+      "",
+      "I was a competitive swimmer starting at age 11 and continued through high school. Although I stopped competing when I entered college, I still enjoy swimming recreationally from time to time.",
+      "",
+      "### Weightlifting",
+      "",
+      "I was more serious about lifting in high school, but I still enjoy getting a good workout in. There's something satisfying about pushing yourself in the gym.",
+      "",
+      "### Supplements",
+      "",
+      "I love learning about new gym supplements and trying them out. I find the science behind supplementation fascinating and enjoy experimenting with what works best for my body.",
+      "",
+      "## Gaming",
+      "",
+      "### Horror Games",
+      "",
+      "I'm a huge fan of atmospheric horror games. Some of my favorites include Dead Space, Silent Hill 2, and Resident Evil 7. I love the tension and storytelling that horror games deliver.",
+      "",
+      "### JRPGs",
+      "",
+      "I also enjoy Japanese role-playing games, particularly the Persona series and Final Fantasy. The combination of engaging narratives, character development, and strategic combat really draws me in.",
+      "",
+      "## Personal Growth",
+      "",
+      "### Investing",
+      "",
+      "I enjoy investing in the stock market and find learning about financial markets, economic trends, and investment strategies to be incredibly fascinating. It's a continuous learning process that I find both challenging and rewarding.",
+      "",
+      "## Fun Facts",
+      "",
+      "My favorite dog breed is the **Shiba Inu**!"
+    ]
+  },
+  "contact": {
+    "title": "# contact.txt",
+    "lines": [
+      {
+        "icon": "Github",
+        "label": "GitHub",
+        "value": "github.com/JTovalin10",
+        "href": "https://github.com/JTovalin10"
+      },
+      {
+        "icon": "Linkedin",
+        "label": "LinkedIn",
+        "value": "linkedin.com/in/justinhernandeztovalin",
+        "href": "https://www.linkedin.com/in/justinhernandeztovalin/"
+      },
+      {
+        "icon": "FileText",
+        "label": "Resume",
+        "value": "Justin Hernandez Tovalin 2025.pdf",
+        "href": "https://drive.google.com/file/d/1kVsTt7p7NCoDdfE-r2-YKdhOXy5Nnkws/view?usp=sharing"
+      }
+    ]
+  }
+}
+
