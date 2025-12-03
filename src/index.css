@@ -40,6 +40,10 @@ body {
   user-select: none;
   background-color: var(--nord-bg);
   color: var(--nord-text);
+  /* Better mobile viewport handling */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Custom Nord Theme Classes */
@@ -197,4 +201,39 @@ body {
 
 .line-height-tight {
   line-height: 1.1;
+}
+
+/* Markdown rendering styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+strong {
+  font-weight: 700;
+}
+
+em {
+  font-style: italic;
+}
+
+code {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+/* Mobile optimizations */
+@media (max-width: 767px) {
+  body {
+    /* Improve scrolling on iOS */
+    overscroll-behavior: none;
+  }
+
+  /* Better touch scrolling */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Prevent text size adjustment on iOS */
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
 }

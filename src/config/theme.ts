@@ -1,5 +1,7 @@
+import { ThemeColors } from '../types';
+
 // --- Theme Colors (Nord) - Bootstrap CSS Classes ---
-export const theme = {
+export const theme: ThemeColors = {
   bg: "nord-bg",
   text: "nord-text",
   textDim: "nord-text-dim",
