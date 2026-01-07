@@ -93,6 +93,7 @@ export function highlightCpp(text: string): string {
       if (urlMatch && urlMatch[0] === stringContent) {
         result += `<span class="${theme.string}">"<a href="${escapeHtml(stringContent)}" target="_blank" rel="noopener noreferrer" class="${theme.link}" style="display: inline; padding: 0; margin: 0; text-decoration: underline; text-decoration-color: var(--nord-primary); text-underline-offset: 2px; cursor: pointer;">${escapeHtml(stringContent)}</a>"</span>`;
       } else {
+        // Always escape HTML to prevent tags from showing
         result += `<span class="${theme.string}">${escapeHtml(part)}</span>`;
       }
       return;
@@ -100,11 +101,6 @@ export function highlightCpp(text: string): string {
 
     // Tokenize the rest
     let processedPart = part;
-
-    // Handle array types like string[]
-    processedPart = processedPart.replace(/(\w+)\[\]/g, (match, type) => {
-      return `<span class="${theme.type}">${type}</span><span class="${theme.operator}">[]</span>`;
-    });
 
     // Split into tokens
     const tokens = processedPart.split(/(\s+|==|!=|<=|>=|&&|\|\||\+\+|--|->|::|[;{}()=,\[\]<>&|+\-*/%!])/).filter(Boolean);
