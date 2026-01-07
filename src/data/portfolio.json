@@ -4,19 +4,64 @@
   "about": {
     "title": "# about.md",
     "lines": [
-      "Hello! I am a Computer Science student at the University of Washington - Seattle. I love learning about algorithms and how to make programs efficient. I am currently on a journey to becoming a proficient infrastructure engineer, primarily using C++ through my ongoing Project Adam.",
+      "Hello! I am a Computer Science student at the University of Washington - Seattle. I love learning about algorithms and how to make programs efficient. I am currently on a journey to becoming a proficient infrastructure engineer, primarily using C++ through my ongoing systems engineering projects.",
       "",
       "What first drew me into programming was game development. Growing up playing video games sparked my curiosity about how they were created. However, it wasn't until university that I finally began to explore this long-standing interest."
     ]
   },
   "projects": [
     {
-      "title": "// --- Project 1: 'Project Adam' ---",
-      "classDef": "class ProjectAdam {",
+      "title": "// --- Project 1: 'Project Adam - Phase 1: The Basics' ---",
+      "classDef": "class ProjectAdamPhase1 {",
       "public": [
-        "string description = \"20-month systems engineering roadmap from data structures to ARM hypervisors, with a focus on networking and distributed systems. Building systems from first principles entirely in C++. Current personal project spanning from October 2025 to June 2027. Phase 1: Foundation (Data Structures, Algorithms, Networking Primitives). Phase 2: Evolution (DNS Server, UDP from Scratch, TCP from Scratch). Phase 3: Perfection (BitTorrent Client, ARM Hypervisor on Raspberry Pi 5). All projects implemented in C++17 with manual memory management, comprehensive testing, and Google C++ Style Guide compliance.\";",
-        "string[] tech_stack = { \"C++17\", \"GCC\" };",
-        "string[] features = { \"Data structures and algorithms library\", \"Networking primitives (Bloom Filter, Ring Buffer, Radix Tree)\", \"Thread pool with work-stealing\", \"Lock-free data structures\", \"DNS server implementation\", \"UDP from scratch\", \"TCP from scratch with congestion control\", \"BitTorrent client\", \"Custom memory allocators\", \"ARM hypervisor (Type-2) on Raspberry Pi 5\", \"Multiple Linux VMs running simultaneously\" };",
+        "string description = \"Phase 1 of Project Adam: 20-month systems engineering roadmap from data structures to distributed systems. \"",
+        "    \"Built fundamental data structures and algorithms from first principles in C++17 with manual memory management. \"",
+        "    \"Completed October 2025 - January 2026.\";",
+        "string[] tech_stack = { \"C++17\", \"GCC\", \"GoogleTest\", \"Raspberry Pi 5\" };",
+        "string[] features = {",
+        "    \"Dynamic Array, Singly/Doubly Linked Lists\",",
+        "    \"Stack, Queue, Hash Table implementations\",",
+        "    \"Trie and LRU Cache\",",
+        "    \"Red-Black Tree (capstone)\",",
+        "    \"Bloom Filter, Ring Buffer, Skip List\",",
+        "    \"CRC32/Internet Checksum algorithms\",",
+        "    \"Token Bucket and Leaky Bucket rate limiters\",",
+        "    \"Exponential Backoff algorithm\",",
+        "    \"A* pathfinding algorithm\",",
+        "    \"Bellman-Ford shortest path\",",
+        "    \"Sliding Window Protocol (capstone)\",",
+        "    \"Comprehensive unit testing with GoogleTest\",",
+        "    \"Manual memory management with pointers\"",
+        "};",
+        "string status = \"Completed\";"
+      ],
+      "links": {
+        "source_code": "https://github.com/JTovalin10/project-adam"
+      },
+      "closeBrace": "};"
+    },
+    {
+      "title": "// --- Project 2: 'Project Adam - Phases 2-4' ---",
+      "classDef": "class ProjectAdamAdvanced {",
+      "public": [
+        "string description = \"Advanced phases of Project Adam covering concurrency, networking protocols, and distributed systems. \"",
+        "    \"Phase 2 (Jan-Apr 2026): Concurrency primitives and parallel computing. \"",
+        "    \"Phase 3 (May-Dec 2026): Network protocols from scratch. \"",
+        "    \"Phase 4 (Apr-Jun 2027): Distributed CDN/Cache with geo-replication. \"",
+        "    \"Currently in Phase 2, also revisiting Phase 1 to implement additional data structures.\";",
+        "string[] tech_stack = { \"C++17\", \"C\", \"GCC\", \"GoogleTest\", \"Raw Sockets\", \"ARM Architecture\", \"Kubernetes\", \"Prometheus\" };",
+        "string[] features = {",
+        "    \"Phase 2: Thread Pool with Work-Stealing (Completed)\",",
+        "    \"Phase 2: Lock-Free Data Structures (Completed) - Atomics and ARM memory model\",",
+        "    \"Phase 2: Custom Mutex Implementation (In Progress) - Lock/unlock with C atomics\",",
+        "    \"Phase 1: Additional data structures (In Progress)\",",
+        "    \"Phase 3: DNS Server - Caching resolver with ad-blocking\",",
+        "    \"Phase 3: UDP from Scratch - Complete UDP protocol over raw sockets\",",
+        "    \"Phase 3: TCP from Scratch - Full TCP implementation with congestion control\",",
+        "    \"Phase 4: Distributed CDN/Cache - Multi-region cache nodes with geographic routing\",",
+        "    \"Phase 4: Kubernetes deployment across AWS/GCP/Azure\",",
+        "    \"Phase 4: Prometheus metrics and observability\"",
+        "};",
         "string status = \"In Progress\";"
       ],
       "links": {
@@ -25,24 +70,41 @@
       "closeBrace": "};"
     },
     {
-      "title": "// --- Project 2: 'Web Server' ---",
+      "title": "// --- Project 3: 'Web Server' ---",
       "classDef": "class WebServer {",
       "public": [
         "string description = \"Multi-threaded HTTP/1.1 web server in C++ from scratch for CSE 333. Utilizes a thread pool to manage concurrent client connections over IPv4/IPv6. Includes a full-text search engine in C with a file-based inverted index built from 10,000+ documents and a multi-index query processor with ranked results.\";",
         "string[] tech_stack = { \"C++\", \"C\", \"HTTP/1.1\", \"IPv4/IPv6\", \"Threading\", \"Multi-threaded Architecture\" };",
-        "string[] features = { \"Multi-threaded HTTP/1.1 web server\", \"Thread pool for concurrent connections\", \"IPv4/IPv6 support\", \"Full-text search engine\", \"File-based inverted index (10,000+ documents)\", \"Multi-index query processor\", \"Ranked search results\" };"
+        "string[] features = {",
+        "    \"Multi-threaded HTTP/1.1 web server\",",
+        "    \"Thread pool for concurrent connections\",",
+        "    \"IPv4/IPv6 support\",",
+        "    \"Full-text search engine\",",
+        "    \"File-based inverted index (10,000+ documents)\",",
+        "    \"Multi-index query processor\",",
+        "    \"Ranked search results\"",
+        "};"
       ],
       "links": {
       },
       "closeBrace": "};"
     },
     {
-      "title": "// --- Project 3: 'SupplementIQ' ---",
+      "title": "// --- Project 4: 'SupplementIQ' ---",
       "classDef": "class SupplementIQ {",
       "public": [
         "string description = \"Web application for supplement transparency and information. Engineered a high-throughput moderation workflow to process 500+ daily submissions, featuring real-time permission checks on Vercel via TypeScript caching. Architected a role-based access control (RBAC) system using Supabase RLS and JWT, achieving sub-50ms response times. Includes status updates and automated migration of approved content.\";",
         "string[] tech_stack = { \"TypeScript\", \"Next.js\", \"Supabase\", \"Redis\", \"Vercel\", \"CASL\" };",
-        "string[] features = { \"High-throughput moderation workflow (500+ daily submissions)\", \"Real-time permission checks with TypeScript caching\", \"Role-based access control (RBAC) with Supabase RLS and JWT\", \"Sub-50ms response times\", \"112 API endpoints\", \"Automated content migration\", \"Status updates system\", \"Multi-role permission system (6 user roles)\" };",
+        "string[] features = {",
+        "    \"High-throughput moderation workflow (500+ daily submissions)\",",
+        "    \"Real-time permission checks with TypeScript caching\",",
+        "    \"Role-based access control (RBAC) with Supabase RLS and JWT\",",
+        "    \"Sub-50ms response times\",",
+        "    \"112 API endpoints\",",
+        "    \"Automated content migration\",",
+        "    \"Status updates system\",",
+        "    \"Multi-role permission system (6 user roles)\"",
+        "};",
         "string status = \"In Progress\";"
       ],
       "links": {
@@ -52,12 +114,17 @@
       "closeBrace": "};"
     },
     {
-      "title": "// --- Project 4: 'GradescopePlus' ---",
+      "title": "// --- Project 5: 'GradescopePlus' ---",
       "classDef": "class GradescopePlus {",
       "public": [
         "string description = \"Simple tool for Gradescope that shows assignments due soon and how many days until they are due. Forked a gradescope-api and added the web part so that people can see their assignments easier.\";",
         "string[] tech_stack = { \"Python\", \"React\", \"Gradescope API\" };",
-        "string[] features = { \"Assignment due date tracking\", \"Days until due calculation\", \"Gradescope integration\", \"Web interface for easier assignment viewing\" };"
+        "string[] features = {",
+        "    \"Assignment due date tracking\",",
+        "    \"Days until due calculation\",",
+        "    \"Gradescope integration\",",
+        "    \"Web interface for easier assignment viewing\"",
+        "};"
       ],
       "links": {
         "source_code": "https://github.com/JTovalin10/gradescope-api",
@@ -71,7 +138,11 @@
       "public": [
         "string description = \"Class project e-commerce platform with product management and SQLite3 database integration.\";",
         "string[] tech_stack = { \"JavaScript\", \"SQL\", \"HTML\", \"CSS\", \"SQLite3\" };",
-        "string[] features = { \"Product management\", \"SQLite3 database integration\", \"Class project implementation\" };"
+        "string[] features = {",
+        "    \"Product management\",",
+        "    \"SQLite3 database integration\",",
+        "    \"Class project implementation\"",
+        "};"
       ],
       "links": {
         "source_code": "https://github.com/JTovalin10/E-Commerce-Website"
