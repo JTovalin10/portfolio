@@ -90,10 +90,10 @@ export function createEditorPane(activeFile: string): HTMLElement {
       });
 
       const link = createElement('a', {
-        href: contactLine.href,
         textContent: contactLine.value,
         className: `d-inline-block px-2 py-1 rounded ${theme.link}`,
         attributes: {
+          href: contactLine.href,
           target: '_blank',
           rel: 'noopener noreferrer'
         },
