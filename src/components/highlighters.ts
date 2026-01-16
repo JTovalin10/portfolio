@@ -35,8 +35,27 @@ export function highlightMarkdown(text: string): string {
     return `<h4 class="${theme.text}" style="font-size: 1.1em; font-weight: bold; margin: 0.4em 0 0.2em 0; line-height: 1.4;">${escapeHtml(h4Match[1])}</h4>`;
   }
 
+  // Handle horizontal rule
+  if (text.trim() === '---') {
+    return '<hr style="border: none; border-top: 1px solid var(--nord-border); margin: 1.5em 0;" />';
+  }
+
+  // Handle list items
+  const listMatch = text.match(/^-\s+(.+)$/);
+  if (listMatch) {
+    let content = listMatch[1];
+    // Process inline formatting within list items
+    content = content.replace(/\*\*([^*]+)\*\*/g, '<strong class="fw-bold" style="color: var(--nord-primary);">$1</strong>');
+    content = content.replace(/\*([^*]+)\*/g, '<em style="font-style: italic; color: var(--nord-text-accent);">$1</em>');
+    content = content.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" style="color: var(--nord-link); text-decoration: underline; text-decoration-color: var(--nord-primary); text-underline-offset: 2px;">$1</a>');
+    return `<span class="text-break" style="line-height: 1.6; display: block; padding-left: 1.5em; text-indent: -1em;">• ${content}</span>`;
+  }
+
   // Handle bold text - render as actual bold
   let processedText = text;
+
+  // Links [text](url)
+  processedText = processedText.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" style="color: var(--nord-link); text-decoration: underline; text-decoration-color: var(--nord-primary); text-underline-offset: 2px;">$1</a>');
 
   // Bold text
   processedText = processedText.replace(/\*\*([^*]+)\*\*/g, '<strong class="fw-bold" style="color: var(--nord-primary);">$1</strong>');

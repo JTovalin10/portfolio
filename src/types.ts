@@ -36,7 +36,7 @@ export interface PortfolioConfig {
   name: string;
   host: string;
   about: PortfolioSection;
-  projects: Project[];
+  projects: PortfolioSection;
   hobbies: PortfolioSection;
   technicalSkills: PortfolioSection;
   extras: PortfolioSection;

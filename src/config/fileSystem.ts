@@ -23,7 +23,7 @@ const StarIcon = `<svg width="24" height="24" stroke-width="1.5" viewBox="0 0 24
 // --- Static File System ---
 export const fileSystem: FileItem[] = [
   { name: "about.md", icon: PageSearchIcon, key: 'a', label: "About Me" },
-  { name: "projects.cpp", icon: CodeIcon, key: 'p', label: "Projects" },
+  { name: "projects.md", icon: CodeIcon, key: 'p', label: "Projects" },
   { name: "technical-skills.md", icon: SettingsIcon, key: 't', label: "Technical Skills" },
   { name: "extras.md", icon: StarIcon, key: 'e', label: "Extras" },
   { name: "hobbies.md", icon: HeartIcon, key: 'h', label: "Hobbies & Interests" },

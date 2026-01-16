@@ -169,44 +169,11 @@ function getContentLines(activeFile: string): (string | ContactLine)[] {
         ...CONFIG.about.lines,
       ];
 
-    case 'projects.cpp':
-      const imports = [
-        "#include <absl/container/flat_hash_map.h>",
-        ""
-      ];
-
-      const typeAliases = [
-        "using string = std::string;",
-        "using map = absl::flat_hash_map;",
-        ""
-      ];
-
-      const projectLines = CONFIG.projects.flatMap(p => {
-        const lines = [
-          p.title,
-          p.classDef,
-          ...p.public.map(line => `    ${line}`),
-        ];
-
-        if (p.links && (p.links.source_code || p.links.live_demo)) {
-          lines.push(`    map<string, string> links = {`);
-          if (p.links.source_code) {
-            lines.push(`        { "source_code", "${p.links.source_code}" },`);
-          }
-          if (p.links.live_demo) {
-            lines.push(`        { "live_demo", "${p.links.live_demo}" },`);
-          }
-          lines.push(`    };`);
-        }
-
-        lines.push(p.closeBrace, "");
-        return lines;
-      });
-
+    case 'projects.md':
       return [
-        ...imports,
-        ...typeAliases,
-        ...projectLines,
+        CONFIG.projects.title,
+        "",
+        ...CONFIG.projects.lines,
       ];
 
     case 'hobbies.md':

@@ -45,8 +45,11 @@ export const CONFIG: PortfolioConfig = {
     lines: portfolioData.about.lines,
   },
 
-  // Projects (C++ / Code-style)
-  projects: portfolioData.projects,
+  // Projects
+  projects: {
+    title: portfolioData.projects.title,
+    lines: portfolioData.projects.lines,
+  },
 
   // Hobbies & Interests
   hobbies: {
