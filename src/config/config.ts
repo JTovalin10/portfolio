@@ -60,6 +60,12 @@ export const CONFIG: PortfolioConfig = {
     lines: portfolioData.technicalSkills.lines,
   },
 
+  // Extras (C++17 Features & Books)
+  extras: {
+    title: portfolioData.extras.title,
+    lines: portfolioData.extras.lines,
+  },
+
   // Contact Info
   contact: {
     title: portfolioData.contact.title,

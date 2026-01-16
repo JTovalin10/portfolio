@@ -223,6 +223,13 @@ function getContentLines(activeFile: string): (string | ContactLine)[] {
         ...CONFIG.technicalSkills.lines,
       ];
 
+    case 'extras.md':
+      return [
+        CONFIG.extras.title,
+        "",
+        ...CONFIG.extras.lines,
+      ];
+
     case 'contact.txt':
       return [
         CONFIG.contact.title,

@@ -39,6 +39,7 @@ export interface PortfolioConfig {
   projects: Project[];
   hobbies: PortfolioSection;
   technicalSkills: PortfolioSection;
+  extras: PortfolioSection;
   contact: {
     title: string;
     lines: ContactLine[];
