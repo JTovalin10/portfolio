@@ -1,5 +1,6 @@
 import './index.css';
-import { AppState, ViewType } from './types';
+import { inject } from '@vercel/analytics';
+import { AppState } from './types';
 import { clearElement } from './utils/dom';
 import { fileSystem } from './config/fileSystem';
 import { theme } from './config/theme';
@@ -8,6 +9,9 @@ import { createFileTree } from './components/FileTree';
 import { createBufferline } from './components/Bufferline';
 import { createEditorPane } from './components/EditorPane';
 import { createLualineBar } from './components/LualineBar';
+
+// Initialize Vercel Analytics
+inject();
 
 // Application state
 const state: AppState = {
